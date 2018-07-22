@@ -14,7 +14,7 @@ exports.verifyToken = verifyToken;
 exports.failActionFunction = failActionFunction;
 exports.authorizationHeaderObj = authorizationHeaderObj();
 
-async function authorizationHeaderObj() {
+function authorizationHeaderObj() {
     return Joi.object({
         authorization: Joi.string().required().description('Bearer Token'),
     }).unknown();

@@ -85,6 +85,11 @@ async function serverSetup() {
     }
 }
 
+process.on('uncaughtException', (err) => {
+    winstonLogger.error('uncaught Exception Occurred ------------> ', err.stack);
+});
+  
+
 serverSetup();
 
 
